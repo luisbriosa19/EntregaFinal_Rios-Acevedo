@@ -1,0 +1,34 @@
+{% extends "AppFinal/padre.html" %} 
+
+{% load static %}
+
+
+{% block titulo %}
+<p>Reseñas de Camisas de Futbol.</p>
+{{mensaje}}
+{% endblock %}
+
+
+{% block descripcion %} 
+<p>Valora tu camisa Favorita.</p>
+{% endblock %} 
+
+{% block busqueda %}
+<form action="/AppFinal/resultado_reseña/" method="GET"> 
+    <input type="text" placeholder ="Nombre del equipo" name="equipo" id="equipo" >    
+    <input type="submit" value="BUSCAR">
+</form>
+
+{% for camisa in camisas %}
+    <br>
+    <p> El Equipo buscado es: {{camisa.equipo}}</p>
+    <p> La Marca es: {{camisa.marca}}</p>
+    <p> La valoracion es: {{camisa.valoracion}}</p>
+    <p> Corresponde al Año: {{camisa.año}}</p>
+    <p> Reseña: {{camisa.reseña}}</p>
+    <p> Imagen: {{camisa.imagen}}</p>
+    
+    <img src="{{camisa.imagen.url}}" alt="No hay imagen.">
+
+{% endfor %}
+{% endblock %}

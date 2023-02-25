@@ -1,0 +1,22 @@
+{% extends "AppFinal/padre.html" %} 
+
+{% load static %}
+
+{% block titulo %}
+En esta sesion puedes registrarte.
+{% endblock %}
+
+{% block descripcion %} 
+<body>
+    <form action="" method="POST">   {% csrf_token %}
+        
+        {{formulario.as_p}}
+
+        <button type="submit"> Registrarse </button>
+
+    </form>
+</body>
+{% endblock %} 
+
+{% block body %}
+{% endblock body %}

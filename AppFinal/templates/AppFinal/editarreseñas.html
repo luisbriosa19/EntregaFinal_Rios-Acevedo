@@ -1,0 +1,15 @@
+{% extends "AppFinal/padre.html" %} 
+
+
+
+
+{% block crear_reseñas %}
+<p>--------------------------------------------------------------- </p>
+    <form action="" enctype="multipart/form-data" method="POST">  {% csrf_token %}
+        <table>
+            {{formcamisas1.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+<p>--------------------------------------------------------------- </p>
+{% endblock %}

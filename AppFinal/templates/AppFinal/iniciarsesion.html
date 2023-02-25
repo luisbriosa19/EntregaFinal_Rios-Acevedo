@@ -1,0 +1,23 @@
+{% extends "AppFinal/padre.html" %} 
+
+{% load static %}
+
+{% block titulo %}
+<p> Inicio de Sesion Usuario Registrados. </p>
+{% endblock %}
+
+
+{% block descripcion %} 
+<body>
+    <form action="" method="POST">   {% csrf_token %}
+        
+        {{formulario.as_p}}
+
+        <button type="submit">Iniciar Sesión</button>
+
+    </form>
+</body>
+{% endblock %} 
+
+{% block body %}
+{% endblock body %}

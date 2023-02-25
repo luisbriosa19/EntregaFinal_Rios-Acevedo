@@ -1,0 +1,39 @@
+{% extends "AppFinal/padre.html" %} 
+
+
+{% block titulo %}
+Listado de reseñas de Camisas de Futbol
+{% endblock %}
+
+{% block descripcion %} 
+
+{% endblock %} 
+
+
+
+{% block ver_reseñas %}
+<p>-----------------------------------------</p>
+
+{% for camisa in Camisas %} 
+    <p> Equipo: {{camisa.equipo}}</p>
+    <p> Marca: {{camisa.marca}}</p>
+    <p> Año: {{camisa.año}}</p>
+    <p> Valoracion: {{camisa.valoracion}}</p>
+    <p> Reseña: {{camisa.reseña}}</p>
+    <p> Imagen: {{camisa.imagen}}</p>
+    
+    <img src="{{camisa.imagen.url}}" alt="No hay imagen.">
+    <br>
+
+
+    <button>
+        <a href="{% url 'editar_reseñas' camisa.equipo %}"> Editar la reseña. </a>
+    </button>
+
+    <button>
+        <a href="{% url 'eliminar_reseñas' camisa.equipo %}"> Eliminar la reseña. </a>
+    </button>
+<p>-----------------------------------------</p>
+{% endfor %}
+
+{% endblock %}
